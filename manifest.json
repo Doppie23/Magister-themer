@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Magister Themer",
+    "version": "0.1",
+    "description": "Een extensie die de kleuren van de Magister dekstop site aanpast.",
+    "action":{
+        "default_title": "Rode onvoldoendes Magister",
+        "default_popup": "popup.html"
+    }
+}
