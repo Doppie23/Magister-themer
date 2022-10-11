@@ -6,5 +6,11 @@
     "action":{
         "default_title": "Rode onvoldoendes Magister",
         "default_popup": "popup.html"
-    }
+    },
+    "content_scripts": [
+        {
+         "matches": ["http://*.magister.net/*","https://*.magister.net/*"],
+         "js": ["script.js"]
+        }
+    ]
 }
