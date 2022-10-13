@@ -3,9 +3,21 @@ html {
     height: 300px;
 }
 
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #1f97f9;
+  }
+
 h1{
-    color: #1f97f9;
+    color: white;
     text-align: center;
+    margin: 20px;
+}
+
+h2{
+    margin-bottom: 0px;
+    margin-left: 10%;
+    color: white;
 }
 
 .content{
@@ -14,11 +26,16 @@ h1{
 }
 
 .kleurwiel{
-    width: 50%;
+    /* background-color: blue; */
+    overflow: auto;
+    width: 80%;
     margin: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .margin{
     margin: 10px;
+    width: 60px;
 }
 
