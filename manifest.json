@@ -12,5 +12,8 @@
          "matches": ["http://*.magister.net/*","https://*.magister.net/*"],
          "js": ["script.js"]
         }
+    ],
+    "permissions": [
+        "storage"
     ]
 }

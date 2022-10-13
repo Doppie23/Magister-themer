@@ -2,16 +2,26 @@
 var hoofdkleur = document.getElementById("hoofdkleur");
 hoofdkleur.addEventListener("change", watchHoofdkleur, false);
 
+var titel = document.getElementById("titel");
+titel.addEventListener("change", watchTitel, false);
+
 function watchHoofdkleur(event) {
-    document.querySelectorAll("h1").forEach((p) => {
-      p.style.color = event.target.value;
-      console.log(event.target.value)
+  console.log(event.target.value)
+  chrome.storage.sync.set({ hoofdkleur: event.target.value })
 
 
-      /*
-      event target opslaan in chrome storage en daar dan naar luisteren in script.js
-      kan dan ook weer ophalen bij reload en dus dan bij verandering
-      */
-    });
-  }
+/*
+event target opslaan in chrome storage en daar dan naar luisteren in script.js
+kan dan ook weer ophalen bij reload en dus dan bij verandering
+*/
 
+}
+
+// chrome.storage.onChanged.addListener(function(changes) {
+//   var action = changes['hoofdkleur'];
+//   console.log(action.newValue)
+// });
+
+function watchTitel(event) {
+  chrome.storage.sync.set({ titel: event.target.value })
+}
