@@ -5,6 +5,10 @@ hoofdkleur.addEventListener("change", watchHoofdkleur, false);
 var titel = document.getElementById("titel");
 titel.addEventListener("change", watchTitel, false);
 
+var tekst = document.getElementById("tekst");
+tekst.addEventListener("change", watchTekst, false);
+
+
 function watchHoofdkleur(event) {
   console.log(event.target.value)
   chrome.storage.sync.set({ hoofdkleur: event.target.value })
@@ -22,6 +26,6 @@ kan dan ook weer ophalen bij reload en dus dan bij verandering
 //   console.log(action.newValue)
 // });
 
-function watchTitel(event) {
-  chrome.storage.sync.set({ titel: event.target.value })
-}
+function watchTitel(event) {chrome.storage.sync.set({ titel: event.target.value })}
+function watchTekst(event) {chrome.storage.sync.set({ tekst: event.target.value })}
+

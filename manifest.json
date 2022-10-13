@@ -11,6 +11,10 @@
         {
          "matches": ["http://*.magister.net/*","https://*.magister.net/*"],
          "js": ["script.js"]
+        },
+        {
+            "matches": ["http://accounts.magister.net/*","https://accounts.magister.net/*"],
+            "js": ["inlog.js"]
         }
     ],
     "permissions": [
