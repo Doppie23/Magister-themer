@@ -28,27 +28,21 @@ chrome.storage.onChanged.addListener(function(changes) {
 });
  
 
-const hoofdkleur = chrome.storage.sync.get('hoofdkleur')
-const titel = chrome.storage.sync.get('titel')
-const tekst = chrome.storage.sync.get('tekst')
-
-
-
 waitForElm('.challenge-actions').then(() => {
-  hoofdkleur.then((hoofdkleur) => {
+  chrome.storage.sync.get(['hoofdkleur'], function(hoofdkleur) {
     document.body.style.backgroundColor = hoofdkleur.hoofdkleur;
-  })
+  });
 
-  titel.then((titel) => {
+  chrome.storage.sync.get(['titel'], function(titel) {
     document.getElementsByTagName('h1')[0].style.color = titel.titel;
     document.getElementsByTagName('path')[1].style.fill = titel.titel;
     document.getElementsByClassName('dna-btn-primary')[0].style.backgroundColor = titel.titel;
-  })
-
-  tekst.then((tekst) => {
+  });
+  
+  chrome.storage.sync.get(['tekst'], function(tekst) {
     document.getElementsByTagName('h2')[0].style.color = tekst.tekst;
     document.getElementsByClassName('dna-btn-primary')[0].style.color = tekst.tekst;
-  })
+  });
 });
 
 
@@ -56,20 +50,20 @@ waitForElm('.challenge-actions').then(() => {
 MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
 var observer = new MutationObserver(function(mutations, observer) {
-  hoofdkleur.then((hoofdkleur) => {
+  chrome.storage.sync.get(['hoofdkleur'], function(hoofdkleur) {
     document.body.style.backgroundColor = hoofdkleur.hoofdkleur;
-  })
+  });
 
-  titel.then((titel) => {
+  chrome.storage.sync.get(['titel'], function(titel) {
     document.getElementsByTagName('h1')[0].style.color = titel.titel;
     document.getElementsByTagName('path')[1].style.fill = titel.titel;
     document.getElementsByClassName('dna-btn-primary')[0].style.backgroundColor = titel.titel;
-  })
-
-  tekst.then((tekst) => {
+  });
+  
+  chrome.storage.sync.get(['tekst'], function(tekst) {
     document.getElementsByTagName('h2')[0].style.color = tekst.tekst;
     document.getElementsByClassName('dna-btn-primary')[0].style.color = tekst.tekst;
-  })
+  });
 
 });
 
